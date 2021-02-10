@@ -1,6 +1,6 @@
 import type { Loader } from "@remix-run/data";
 import { Meta, Scripts, Styles, useRouteData } from "@remix-run/react";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export let loader: Loader = async () => {
   return { date: new Date() };
@@ -17,6 +17,12 @@ export default function App() {
         <Styles />
       </head>
       <body>
+
+        <div className="mainnav">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </div>
+        
         <Outlet />
 
         <footer>
