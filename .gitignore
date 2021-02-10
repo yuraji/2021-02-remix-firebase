@@ -1,5 +1,9 @@
 node_modules/
-package-lock.json
 
 /build
 /public/build
+
+.npmrc
+*.log
+*.cache
+.DS_Store
