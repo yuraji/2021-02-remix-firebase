@@ -38,9 +38,10 @@ app.all(
     // Uncomment the following line if you don't want sessions. This will
     // disable the warning message when no session middleware is present.
     //enableSessions: false,
-    getLoadContext() {
+    getLoadContext(req) {
       // Whatever you return here will be passed as `context` to your loaders
       // and actions.
+      return { req }
     },
   })
 );
@@ -57,9 +58,10 @@ app.all(
     // Uncomment the following line if you don't want sessions. This will
     // disable the warning message when no session middleware is present.
     // enableSessions: false,
-    getLoadContext() {
+    getLoadContext(req) {
       // Whatever you return here will be passed as `context` to your loaders
       // and actions.
+      return { req }
     },
   })
 );

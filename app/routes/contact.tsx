@@ -13,12 +13,11 @@ export let loader: Loader = async () => {
     return { message: "this is awesome 😎" };
 };
 
-export let action: Action = async ({ request }) => {
-    let body = new URLSearchParams(await request.text());
-    let content = body.get("message");
-    console.log("CONTENT:", content);
+export let action: Action = async ({ request, context }) => {
+    const { body } = context.req;
+    console.log("CONTENT:", body);
 
-    return redirect("/contact");
+    return redirect(`${context.req.get('origin')}/contact`);
 };
 
 export default function Index() {
