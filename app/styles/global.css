@@ -2,14 +2,21 @@
   outline: none;
 }
 
-body {
-  font-family: sans-serif;
-}
-
 footer {
   text-align: center;
   color: #ccc;
   padding-top: 80px;
+}
+
+button, .btn, input[type=submit] {
+  @apply px-4 py-2 m-1 bg-pink-600 text-white rounded;
+}
+
+a {
+  @apply border-b-2 border-blue-300 text-blue-400 cursor-pointer;
+}
+a.active {
+  @apply border-0 no-underline text-blueGray-400 cursor-default;
 }
 
 .mainnav {
@@ -19,11 +26,4 @@ footer {
   display: inline-block;
   margin: 8px;
   font-size: 2.2em;
-  color: cornflowerblue;
-  text-decoration: underline;
-}
-.mainnav a.active {
-  color: gray;
-  text-decoration: none;
-  cursor: default;
 }

@@ -1,14 +1,18 @@
 import type { LinksFunction, Loader } from "@remix-run/data";
 import { Links, Meta, Scripts, useRouteData } from "@remix-run/react";
 import { NavLink, Outlet } from "react-router-dom";
-import styles from "url:./styles/global.css"
+import tailwind from "css:./styles/tailwind.css"
+import styles from "css:./styles/global.css"
 
 export let loader: Loader = async () => {
   return { date: new Date() };
 };
 
 export let links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles}]
+  return [
+    { rel: "stylesheet", href: tailwind},
+    { rel: "stylesheet", href: styles},
+  ]
 }
 
 export default function App() {
